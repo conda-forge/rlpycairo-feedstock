@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rlPyCairo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rlPyCairo-{{ version }}.tar.gz
   sha256: 7cd1eac30fe69d98f75d67a54892f9c10534a047b9a959ef17bb3926a196e50a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
     - wheel
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pycairo >=1.20.0
     - freetype-py >=2.3
 
@@ -35,6 +35,7 @@ test:
   requires:
     - pip
     - reportlab
+    - python {{ python_min }}
 
 about:
   home: https://hg.reportlab.com/hg-public/rlPyCairo
