@@ -1,18 +1,18 @@
 {% set name = "rlpycairo" %}
-{% set version = "0.2.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rlPyCairo-{{ version }}.tar.gz
-  sha256: 7cd1eac30fe69d98f75d67a54892f9c10534a047b9a959ef17bb3926a196e50a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 07c2c3c47828e83d9c09657a54ecbcd1a97aac9dc199780234456d3473faadc7
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
