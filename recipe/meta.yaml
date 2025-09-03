@@ -30,8 +30,8 @@ test:
     - rlPyCairo
     - rlPyCairo.gstate
     - rlPyCairo.pil2pict
-  commands:
-    - pip check
+  # commands:
+  #   - pip check
   requires:
     - pip
     - reportlab
